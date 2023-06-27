@@ -31,7 +31,7 @@
 
   <h1>Realtime Wikipedia Events</h1>
   <div hx-sse="connect:https://stream.wikimedia.org/v2/stream/recentchange swap:message" mustache-template="event"
-    hx-swap="afterbegin" style="height: 200px; overflow:scroll" />
+    hx-swap="afterbegin" id="events" />
 
   <template id="event">
     <div remove-me="1s"><a href="{{url}}">{{title}}</a></div>
