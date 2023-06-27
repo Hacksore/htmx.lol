@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <meta property="og:title" content="htmx.lol">
-  <meta property="og:site_name" content="htmx.lol">
-  <meta property="og:url" content="https://htmx.lol">
-  <meta property="og:description" content="Jeff is their biggest fan fr fr ong">
-  <meta property="og:type" content="">
-  <meta property="og:image" content="https://htmx.lol/og.png">
+  <meta property="og:title" content="htmx.lol" />
+  <meta property="og:site_name" content="htmx.lol" />
+  <meta property="og:url" content="https://htmx.lol" />
+  <meta property="og:description" content="Jeff is their biggest fan fr fr ong" />
+  <meta property="og:type" content="" />
+  <meta property="og:image" content="https://htmx.lol/og.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>htmx.lol</title>
   <script src="https://unpkg.com/htmx.org@1.9.2"
@@ -21,12 +21,11 @@
   <script type="text/javascript">
     htmx.createEventSource = (url) => new EventSource(url);
   </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
 <body hx-ext="client-side-templates,remove-me">
-  <div class="header" hx-trigger="mouseenter">
-    🫠
-  </div>
+  <div class="header" hx-trigger="mouseenter">🫠</div>
 
   <h1>Realtime Wikipedia Events</h1>
   <div hx-sse="connect:https://stream.wikimedia.org/v2/stream/recentchange swap:message" mustache-template="event"
