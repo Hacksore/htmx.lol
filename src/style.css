@@ -42,9 +42,19 @@ body {
   font-size: 20px;
   width: 900px;
   height: 600px;
-  overflow-y: scroll; 
+  overflow-y: scroll;
   word-wrap: break-word;
   display: flex;
   flex-direction: column;
 }
 
+/* make a nice looking gradent text */
+@supports (-webkit-background-clip: text) {
+  h1 {
+    background: linear-gradient(75deg, #ff75f1, #535bf2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 80px;
+    /* text-shadow: 0 0 10px #1a1a1a; */
+  }
+}

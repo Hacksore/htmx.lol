@@ -29,7 +29,11 @@
 
   <h1>Realtime Wikipedia Events</h1>
   <div hx-sse="connect:https://stream.wikimedia.org/v2/stream/recentchange swap:message" mustache-template="event"
-    hx-swap="afterbegin" id="events" />
+    hx-swap="afterbegin" id="events"></div>
+
+  <div target="_blank" style="padding: 100px; font-size: 50px">
+    <a href="https://github.com/Hacksore/htmx.lol">Source on the Hub</a>
+  </div>
 
   <template id="event">
     <div remove-me="10s"><a href="{{url}}">{{title}}</a></div>
