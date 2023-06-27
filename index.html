@@ -11,16 +11,31 @@
   <meta property="og:type" content="">
   <meta property="og:image" content=https://htmx.lol/og.png>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="htmx-config" content='{"createEventSource":"outerHTML"}' />
   <title>htmx.lol</title>
+  <script src="https://unpkg.com/htmx.org@1.9.2"
+    integrity="sha384-L6OqL9pRWyyFU3+/bjdSri+iIphTN/bvYyM37tICVyOJkWZLpP2vGn6VUEXgzg6h"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
+  <script src="https://unpkg.com/mustache@latest"></script>
+  <script src="https://unpkg.com/htmx.org/dist/ext/remove-me.js"></script>
+  <script type="text/javascript">
+    htmx.createEventSource = (url) => new EventSource(url);
+  </script>
 </head>
 
-<body>
+<body hx-ext="client-side-templates">
   <div class="header" hx-trigger="mouseenter">
     🫠
   </div>
 
   <h1>Realtime Wikipedia Events</h1>
-  <div id="events"></div>
+  <div hx-sse="connect:https://stream.wikimedia.org/v2/stream/recentchange swap:message" mustache-template="event"
+    hx-swap="afterbegin" style="height: 200px; overflow:scroll" />
+
+  <template id="event">
+    <div remove-me="1s"><a href="{{url}}">{{title}}</a></div>
+  </template>
 
   <script type="module" src="/src/main.ts"></script>
 </body>
