@@ -46,7 +46,7 @@ h1 {
 #events {
   font-size: 20px;
   max-width: 900px;
-  height: 600px;
+  height: 400px;
   overflow-y: auto;
   word-wrap: break-word;
   display: flex;
