@@ -35,17 +35,24 @@ body {
 }
 
 .header {
-  font-size: 200px;
+  font-size: 150px;
+}
+
+h1 {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 #events {
   font-size: 20px;
-  width: 900px;
+  max-width: 900px;
   height: 600px;
   overflow-y: scroll;
   word-wrap: break-word;
   display: flex;
   flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* make a nice looking gradent text */
@@ -54,7 +61,7 @@ body {
     background: linear-gradient(75deg, #ff75f1, #535bf2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 80px;
+    font-size: 60px;
     /* text-shadow: 0 0 10px #1a1a1a; */
   }
 }
