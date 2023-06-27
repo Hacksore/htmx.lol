@@ -11,9 +11,5 @@
   "devDependencies": {
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
-  },
-  "dependencies": {
-    "@vercel/analytics": "^1.0.1",
-    "htmx.org": "^1.9.2"
   }
 }

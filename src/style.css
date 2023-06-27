@@ -5,13 +5,44 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+/* background effects */
+#grain {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+  z-index: 10;
+}
+#blob1,
+#blob2 {
+  position: fixed;
+  border-radius: 50%;
+  width: 30rem;
+  height: 30rem;
+  filter: blur(15rem);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: -2;
+}
+#blob1 {
+  background-color: #535bf2;
+  left: 50%;
+  top: 0;
+}
+#blob2 {
+  background-color: #ff75f1;
+  right: 50%;
+  top: 0;
 }
 
 a {
@@ -23,12 +54,16 @@ a:hover {
   color: #535bf2;
 }
 
+img {
+  max-width: 100dvw;
+}
+
 body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100dvh;
   align-self: center;
   justify-content: center;
   flex-direction: column;
@@ -47,21 +82,46 @@ h1 {
   font-size: 20px;
   max-width: 900px;
   height: 400px;
+  min-width: 50%;
   overflow-y: auto;
   word-wrap: break-word;
   display: flex;
   flex-direction: column;
   padding-left: 20px;
   padding-right: 20px;
+  border-radius: 20px;
+  background-color: #fff1;
+  border: 1px solid #fff4;
+  box-shadow: 0 0 5rem -0.5rem #fff2;
 }
 
 /* make a nice looking gradent text */
 @supports (-webkit-background-clip: text) {
   h1 {
     background: linear-gradient(75deg, #ff75f1, #535bf2);
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
     font-size: 60px;
     /* text-shadow: 0 0 10px #1a1a1a; */
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .header {
+    font-size: 100px;
+  }
+  h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+  #events {
+    width: calc(100% - 2rem);
+    padding: 0;
+    max-width: 100dvw;
+    margin: 1rem;
+  }
+  #grain {
+    display: none !important;
   }
 }

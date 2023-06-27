@@ -112,11 +112,6 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.17.19.tgz#8cfaf2ff603e9aabb910e9c0558c26cf32744061"
   integrity sha512-lAhycmKnVOuRYNtRtatQR1LPQf2oYCkRGkSFnseDAKPl8lu5SOsK/e1sXe5a0Pc5kHIHe6P2I/ilntNv2xf3cA==
 
-"@vercel/analytics@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@vercel/analytics/-/analytics-1.0.1.tgz#38308a626c91866cb00a249c08bf65251e9b9d81"
-  integrity sha512-Ux0c9qUfkcPqng3vrR0GTrlQdqNJ2JREn/2ydrVuKwM3RtMfF2mWX31Ijqo1opSjNAq6rK76PwtANw6kl6TAow==
-
 esbuild@^0.17.5:
   version "0.17.19"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.17.19.tgz#087a727e98299f0462a3d0bcdd9cd7ff100bd955"
@@ -149,11 +144,6 @@ fsevents@~2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
-
-htmx.org@^1.9.2:
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/htmx.org/-/htmx.org-1.9.2.tgz#8850ed8895108eee46c2b4c2f70beb524fe54f3b"
-  integrity sha512-ZGbucKcalQyXdGUl+4Zt3xdRDPmNy70yNhMyDG1eDYUm/ImxmSo2rhIBDa53XitrAVhA+/CGgry+wJ1SO77wrA==
 
 nanoid@^3.3.6:
   version "3.3.6"

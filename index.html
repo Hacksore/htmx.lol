@@ -1,50 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <meta property="og:title" content="htmx.lol" />
+    <meta property="og:site_name" content="htmx.lol" />
+    <meta property="og:url" content="https://htmx.lol" />
+    <meta
+      property="og:description"
+      content="Jeff is their biggest fan fr fr ong"
+    />
+    <meta property="og:type" content="" />
+    <meta property="og:image" content="https://htmx.lol/og.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>htmx.lol</title>
+    <script
+      src="https://unpkg.com/htmx.org@1.9.2"
+      integrity="sha384-L6OqL9pRWyyFU3+/bjdSri+iIphTN/bvYyM37tICVyOJkWZLpP2vGn6VUEXgzg6h"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/remove-me.js"></script>
+    <script type="text/javascript">
+      htmx.createEventSource = (url) => new EventSource(url);
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <meta property="og:title" content="htmx.lol" />
-  <meta property="og:site_name" content="htmx.lol" />
-  <meta property="og:url" content="https://htmx.lol" />
-  <meta property="og:description" content="Jeff is their biggest fan fr fr ong" />
-  <meta property="og:type" content="" />
-  <meta property="og:image" content="https://htmx.lol/og.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>htmx.lol</title>
-  <script src="https://unpkg.com/htmx.org@1.9.2"
-    integrity="sha384-L6OqL9pRWyyFU3+/bjdSri+iIphTN/bvYyM37tICVyOJkWZLpP2vGn6VUEXgzg6h"
-    crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
-  <script src="https://unpkg.com/mustache@latest"></script>
-  <script src="https://unpkg.com/htmx.org/dist/ext/remove-me.js"></script>
-  <script type="text/javascript">
-    htmx.createEventSource = (url) => new EventSource(url);
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
-</head>
+  <body hx-ext="client-side-templates,remove-me">
+    <svg id="grain">
+      <filter id="noise">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.7"
+          numOctaves="5"
+          stitchTiles="stitch"
+        ></feTurbulence>
+      </filter>
+      <rect width="100%" height="100%" filter="url(#noise)"></rect>
+    </svg>
+    <div id="blob1"></div>
+    <div id="blob2"></div>
 
-<body hx-ext="client-side-templates,remove-me">
-  <div class="header">
-    <img src="/melting.png" alt="htmx.lol" />
-  </div>
-
-  <h1>Realtime Wikipedia Events</h1>
-  <div hx-sse="connect:https://stream.wikimedia.org/v2/stream/recentchange swap:message" mustache-template="event"
-    hx-swap="afterbegin" id="events"></div>
-
-  <div target="_blank" style="padding: 40px; font-size: 30px">
-    <a style="color: #fff" href="https://github.com/Hacksore/htmx.lol">Source on the Hub</a>
-  </div>
-
-  <img src="/createdwith.jpeg" alt="created with" />
-  <template id="event">
-    <div remove-me="10s">
-      <a target="_blank" href="{{meta.uri}}">{{user}} edited {{wiki}}</a>
+    <div class="header">
+      <img src="/melting.png" alt="htmx.lol" />
     </div>
-  </template>
 
-  <script type="module" src="/src/main.ts"></script>
-</body>
+    <h1>Realtime Wikipedia Events</h1>
+    <div
+      hx-sse="connect:https://stream.wikimedia.org/v2/stream/recentchange swap:message"
+      mustache-template="event"
+      hx-swap="afterbegin"
+      id="events"
+    ></div>
 
+    <div target="_blank" style="padding: 40px; font-size: 30px">
+      <a style="color: #fff" href="https://github.com/Hacksore/htmx.lol">
+        Source on the <b>Hub</b>
+      </a>
+    </div>
+
+    <img src="/createdwith.jpeg" alt="created with" />
+    <template id="event">
+      <div remove-me="10s">
+        <a target="_blank" href="{{meta.uri}}">{{user}} edited {{wiki}}</a>
+      </div>
+    </template>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>
