@@ -25,7 +25,9 @@
 </head>
 
 <body hx-ext="client-side-templates,remove-me">
-  <div class="header" hx-trigger="mouseenter">🫠</div>
+  <div class="header">
+    <img src="/melting.png" alt="htmx.lol" />
+  </div>
 
   <h1>Realtime Wikipedia Events</h1>
   <div hx-sse="connect:https://stream.wikimedia.org/v2/stream/recentchange swap:message" mustache-template="event"
